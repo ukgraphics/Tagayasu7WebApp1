@@ -1,0 +1,29 @@
+﻿@page
+@model Tagayasu7AspNetCoreApp1.Pages.EventDetailModel
+@{
+    ViewData["Title"] = "Event Detail";
+}
+
+<h2>Event Detail</h2>
+
+<p>
+    <a asp-page="EventDetail">イベント概要</a>
+</p>
+
+<dl class="dl-horizontal">
+    <dt>
+        タイトル
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.EventItem[0].title)
+    </dd>
+    <dt>
+        <br />
+        説明
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.EventItem[0].description)
+    </dd>
+</dl>
+
+<a asp-page="./EventList">戻る</a>

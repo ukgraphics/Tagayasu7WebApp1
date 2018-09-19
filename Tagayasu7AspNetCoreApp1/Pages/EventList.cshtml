@@ -1,0 +1,40 @@
+﻿@page
+@model Tagayasu7AspNetCoreApp1.Pages.EventListModel
+@{
+    ViewData["Title"] = "Event List";
+}
+
+<h2>Event List</h2>
+
+<p>
+<a asp-page="EventList">イベントリスト</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>タイトル</th>
+            <th>開催会場</th>
+            <th>イベントURL</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.EventList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.place)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.event_url)
+                </td>
+                <td>
+                    <a asp-page="./EventDetail" asp-route-id="@item.event_id">概要</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
